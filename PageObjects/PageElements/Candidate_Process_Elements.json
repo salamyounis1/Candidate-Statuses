@@ -1,0 +1,14 @@
+{
+
+    "Candidate_Process_Locators":{
+       "Recruitment_Button":":nth-child(5) > .oxd-main-menu-item",
+       "ViewCandidates_Button":".--visited > .oxd-topbar-body-nav-tab-item",
+       "ViewMyCandidates_Button":":nth-child(1) > .oxd-table-row > :nth-child(7) > .oxd-table-cell-actions > :nth-child(1)",
+       "Status1":".oxd-table-body > :nth-child(1) > .oxd-table-row > :nth-child(6) > div",
+       "Status2":".orangehrm-recruitment-status > .oxd-text",
+       "Reject_Button":".oxd-button--danger",
+       "InterviewScheduled_Button":".oxd-button--success"
+       
+
+    }
+}
