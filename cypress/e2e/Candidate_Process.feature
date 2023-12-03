@@ -18,18 +18,18 @@ Feature: Candidate Process Regression Testing
     When the HR administrator schedules an interview
     Then the candidate status should be "Interview Scheduled"
 
-#   Scenario: Verify candidate status flow from Interview Scheduled
-#     Given the candidate is in "Interview Scheduled" status
-#     When the HR administrator rejects the candidate
-#     Then the candidate status should be "Rejected"
+  Scenario: Verify candidate status flow from Interview Scheduled
+    Given the candidate is in "Interview Scheduled" status
+    When the HR administrator rejects the candidate from IS
+    Then the candidate status should be "Rejected"
 
-#     Given the candidate is in "Interview Scheduled" status
-#     When the HR administrator marks the interview as failed
-#     Then the candidate status should be "Interview Failed"
+    Given the candidate is in "Interview Scheduled" status
+    When the HR administrator marks the interview as failed
+    Then the candidate status should be "Interview Failed"
 
-#     Given the candidate is in "Interview Scheduled" status
-#     When the HR administrator marks the interview as passed
-#     Then the candidate status should be "Interview Passed"
+    Given the candidate is in "Interview Scheduled" status
+    When the HR administrator marks the interview as passed
+    Then the candidate status should be "Interview Passed"
 
 #   Scenario: Verify candidate status flow from Interview Failed
 #     Given the candidate is in "Interview Failed" status

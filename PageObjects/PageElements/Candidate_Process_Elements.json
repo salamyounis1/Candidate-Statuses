@@ -20,7 +20,9 @@
        "Interviewer_Name":".oxd-autocomplete-text-input > input",
        "DateOfIn":".oxd-date-input > .oxd-input",
        "Delete_can":":nth-child(1) > .oxd-table-row > :nth-child(7) > .oxd-table-cell-actions > :nth-child(2)",
-       "YES_Delete":".oxd-button--label-danger"
+       "YES_Delete":".oxd-button--label-danger",
+       "Reject_Int":".orangehrm-recruitment-actions > :nth-child(1)",
+       "Interview_Failed_Button":".orangehrm-recruitment-actions > :nth-child(2)"
 
        
 

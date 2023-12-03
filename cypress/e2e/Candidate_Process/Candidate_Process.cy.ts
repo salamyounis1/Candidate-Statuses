@@ -114,3 +114,112 @@ Then('the candidate status should be "Interview Scheduled"',()=>{
     candidate_process_actions.Status1_Check('Interview Scheduled');
     candidate_process_actions.delete_cann();
 });
+// Scenario: Verify candidate status flow from Interview Scheduled
+// Given the candidate is in "Interview Scheduled" status
+// When the HR administrator rejects the candidate from IS
+// Then the candidate status should be "Rejected"
+
+// # Given the candidate is in "Interview Scheduled" status
+// # When the HR administrator marks the interview as failed
+// # Then the candidate status should be "Interview Failed"
+
+// # Given the candidate is in "Interview Scheduled" status
+// # When the HR administrator marks the interview as passed
+// # Then the candidate status should be "Interview Passed"
+
+Given('the candidate is in "Interview Scheduled" status',()=>{
+    candidate_process_actions.RecruitmentButton();
+
+});
+When('the HR administrator rejects the candidate from IS',()=>{
+
+    candidate_process_actions. Add_Candidate('interv then reject','one2','salam',"ss2@gmail.com",'Senior QA Lead');
+   candidate_process_actions.ViewCandidatesButton();
+   candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions.GreenButton();//shortlist
+    candidate_process_actions.SaveStatus();
+
+    candidate_process_actions.RecruitmentButton();
+
+
+
+   candidate_process_actions.ViewCandidatesButton();
+   candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions.GreenButton();//interview
+    candidate_process_actions.Add_interv('Int with salam','Odis  Adalwin','2023-12-03');
+    candidate_process_actions.SaveStatus();
+
+    candidate_process_actions.RecruitmentButton();
+
+    candidate_process_actions.ViewCandidatesButton();
+    candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions. Reject_After_Interview()//reject
+     candidate_process_actions.SaveStatus();
+
+});
+
+
+When('the HR administrator marks the interview as failed',()=>{
+
+    candidate_process_actions. Add_Candidate('interv then failed','one2','salam',"ss2@gmail.com",'Senior QA Lead');
+   candidate_process_actions.ViewCandidatesButton();
+   candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions.GreenButton();//shortlist
+    candidate_process_actions.SaveStatus();
+
+    candidate_process_actions.RecruitmentButton();
+
+
+
+   candidate_process_actions.ViewCandidatesButton();
+   candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions.GreenButton();//interview
+    candidate_process_actions.Add_interv('Int with salam','Odis  Adalwin','2023-12-03');
+    candidate_process_actions.SaveStatus();
+
+    candidate_process_actions.RecruitmentButton();
+
+    candidate_process_actions.ViewCandidatesButton();
+    candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions.Mark_Interview_Failed();
+     candidate_process_actions.SaveStatus();
+
+});
+
+Then('the candidate status should be "Interview Failed"',()=>{
+    candidate_process_actions.RecruitmentButton();
+    candidate_process_actions.Status1_Check('Interview Failed');
+    candidate_process_actions.delete_cann();
+});
+
+When('the HR administrator marks the interview as passed',()=>{
+
+    candidate_process_actions. Add_Candidate('interv then pass','one2','salam',"ss2@gmail.com",'Senior QA Lead');
+   candidate_process_actions.ViewCandidatesButton();
+   candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions.GreenButton();//shortlist
+    candidate_process_actions.SaveStatus();
+
+    candidate_process_actions.RecruitmentButton();
+
+
+
+   
+   candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions.GreenButton();//interview
+    candidate_process_actions.Add_interv('Int with salam','Odis  Adalwin','2023-12-03');
+    candidate_process_actions.SaveStatus();
+
+    candidate_process_actions.RecruitmentButton();
+
+   
+    candidate_process_actions.ViewMyCandidates_Button();
+    candidate_process_actions.GreenButton();
+     candidate_process_actions.SaveStatus();
+
+});
+Then('the candidate status should be "Interview Passed"',()=>{
+    candidate_process_actions.RecruitmentButton();
+    candidate_process_actions.Status1_Check('Interview Passed');
+    candidate_process_actions.delete_cann();
+});

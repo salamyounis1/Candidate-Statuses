@@ -60,14 +60,22 @@ cy.get('.oxd-button.oxd-button--medium.oxd-button--text.orangehrm-input-field-bo
 
     cy.get(Candidate_Process_Locators.DateOfIn).type(date);
       }
-
-      delete_cann():void{
+ delete_cann():void{
         cy.get(Candidate_Process_Locators.Delete_can).click({ force: true });
         cy.get(Candidate_Process_Locators.YES_Delete).click({ force: true });
         return;
 
         
       }
+Reject_After_Interview():void{
+  cy.get(Candidate_Process_Locators.Reject_Int).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
+Mark_Interview_Failed():void{
+  cy.get(Candidate_Process_Locators.Interview_Failed_Button).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
+
 }
 
 
