@@ -20,6 +20,13 @@ export class Candidate_Process_Actions {
     
     return;
   }
+  Status2_Check(expectedText: string): void {
+
+    cy.get(Candidate_Process_Locators.Status2).should('have.text', 'Status: '+expectedText);
+    
+    
+    return;
+  }
   RejectButton(): void {
     cy.get(Candidate_Process_Locators.Reject_Button).click({ force: true }).then(() => cy.wait(5000));
     return;
@@ -29,7 +36,7 @@ export class Candidate_Process_Actions {
     return;
   }
   Add_Candidate(firstName: string,midName: string,lastName: string, email: string, vacancy: string): void {
-    cy.get(Candidate_Process_Locators.AddCa_Button).click();
+    cy.get(Candidate_Process_Locators.AddCa_Button).click({ force: true });
     cy.get(Candidate_Process_Locators.F_Name).type(firstName);
     cy.get(Candidate_Process_Locators.M_Name).type(midName);
     cy.get(Candidate_Process_Locators.L_Name).type(lastName);
@@ -75,7 +82,42 @@ Mark_Interview_Failed():void{
   cy.get(Candidate_Process_Locators.Interview_Failed_Button).click({ force: true }).then(() => cy.wait(5000));
   return;
 }
+Reject_Failed():void{
+  cy.get(Candidate_Process_Locators.Reject_after_fail).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
 
+Reject_Pass():void{
+  cy.get(Candidate_Process_Locators.Reject_after_pass_Button).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
+Another_Int():void{
+  cy.get(Candidate_Process_Locators.Second_Iv_Button).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
+
+Offer_jop():void{
+  cy.get(Candidate_Process_Locators.Offer_job_Button).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
+Reject_Offer():void{
+  cy.get(Candidate_Process_Locators.Reject_Offer_But).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
+
+Offer_Declined():void{
+  cy.get(Candidate_Process_Locators.Offer_Declined_Button).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
+Hire():void{
+  cy.get(Candidate_Process_Locators.Hire_Button).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
+
+Reject_OFDes():void{
+  cy.get(Candidate_Process_Locators.Reject_after_ofde).click({ force: true }).then(() => cy.wait(5000));
+  return;
+}
 }
 
 

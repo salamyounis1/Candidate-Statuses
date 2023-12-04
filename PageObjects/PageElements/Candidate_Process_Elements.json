@@ -22,7 +22,16 @@
        "Delete_can":":nth-child(1) > .oxd-table-row > :nth-child(7) > .oxd-table-cell-actions > :nth-child(2)",
        "YES_Delete":".oxd-button--label-danger",
        "Reject_Int":".orangehrm-recruitment-actions > :nth-child(1)",
-       "Interview_Failed_Button":".orangehrm-recruitment-actions > :nth-child(2)"
+       "Interview_Failed_Button":".orangehrm-recruitment-actions > :nth-child(2)",
+       "Reject_after_fail":".oxd-button",
+       "Reject_after_pass_Button":".oxd-button--danger",
+       "Second_Iv_Button":".orangehrm-recruitment-actions > :nth-child(2)",
+       "Offer_job_Button":".orangehrm-recruitment-actions > :nth-child(3)",
+       "Reject_Offer_But":".orangehrm-recruitment-actions > :nth-child(1)",
+       "Offer_Declined_Button":".orangehrm-recruitment-actions > :nth-child(2)",
+       "Hire_Button":".oxd-button--success",
+       "Reject_after_ofde":".oxd-button"
+
 
        
 
