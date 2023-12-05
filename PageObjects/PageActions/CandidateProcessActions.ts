@@ -6,18 +6,11 @@ export class Candidate_Process_Actions {
     return;
   }
   ViewCandidatesButton(): void {
-    cy.get(Candidate_Process_Locators.ViewCandidates_Button).click({ force: true });
+    cy.contains(Candidate_Process_Locators.ViewCandidates_Button).click({ force: true });
     return;
   }
   ViewMyCandidates_Button(): void {
-    cy.get(Candidate_Process_Locators.ViewMyCandidates_Button).click({ force: true });
-    return;
-  }
-  Status1_Check(expectedText: string): void {
-
-    cy.get(Candidate_Process_Locators.Status1).should('have.text', expectedText);
-    
-    
+    cy.get(Candidate_Process_Locators.ViewMyCandidates_Button).first().click({ force: true });
     return;
   }
   Status2_Check(expectedText: string): void {
@@ -25,6 +18,10 @@ export class Candidate_Process_Actions {
     cy.get(Candidate_Process_Locators.Status2).should('have.text', 'Status: '+expectedText);
     
     
+    return;
+  }
+  Title_Check(expectedText: string):void{
+    cy.get(Candidate_Process_Locators.respective_page).first().should('have.text',expectedText);
     return;
   }
   RejectButton(): void {
@@ -40,7 +37,7 @@ export class Candidate_Process_Actions {
     cy.get(Candidate_Process_Locators.F_Name).type(firstName);
     cy.get(Candidate_Process_Locators.M_Name).type(midName);
     cy.get(Candidate_Process_Locators.L_Name).type(lastName);
-    cy.get(Candidate_Process_Locators.Email_txt).type(email);
+    cy.get(Candidate_Process_Locators.Email_txt).first().type(email);
     cy.get(Candidate_Process_Locators.Select_Vacancy).click({ force: true });// Open the dropdown
     cy.get('span[data-v-13cf171c=""]').contains('Associate IT Manager').click({ force: true });
     cy.get(Candidate_Process_Locators.Save_Candidate).click();
@@ -58,66 +55,58 @@ export class Candidate_Process_Actions {
 
   }
   Add_interv(Interview_Title : string,Int_Name ,date :string ):void{
-    cy.get(Candidate_Process_Locators.Interview_title).type(Interview_Title);
-     cy.get(Candidate_Process_Locators.Interviewer_Name).type('Odis');
-   
+    cy.get(Candidate_Process_Locators.Interview_title).eq(5).type(Interview_Title);
+    cy.get(Candidate_Process_Locators.Interviewer_Name).type('Odis');
     cy.get('span[data-v-1ccb3a64=""]').click({ force: true });
-cy.get('.oxd-button.oxd-button--medium.oxd-button--text.orangehrm-input-field-bottom-space').click({ force: true });
+    cy.get('.oxd-button.oxd-button--medium.oxd-button--text.orangehrm-input-field-bottom-space').click({ force: true });
 
 
-    cy.get(Candidate_Process_Locators.DateOfIn).type(date);
+    cy.get(Candidate_Process_Locators.DateOfIn).first().type(date);
       }
  delete_cann():void{
-        cy.get(Candidate_Process_Locators.Delete_can).click({ force: true });
+        cy.get(Candidate_Process_Locators.Delete_can).first().click({ force: true });
         cy.get(Candidate_Process_Locators.YES_Delete).click({ force: true });
         return;
 
         
       }
 Reject_After_Interview():void{
-  cy.get(Candidate_Process_Locators.Reject_Int).click({ force: true }).then(() => cy.wait(5000));
+  cy.contains(Candidate_Process_Locators.Reject_Int).click({ force: true }).then(() => cy.wait(5000));
   return;
 }
 Mark_Interview_Failed():void{
-  cy.get(Candidate_Process_Locators.Interview_Failed_Button).click({ force: true }).then(() => cy.wait(5000));
+  cy.contains(Candidate_Process_Locators.Interview_Failed_Button).click({ force: true }).then(() => cy.wait(5000));
   return;
 }
 Reject_Failed():void{
-  cy.get(Candidate_Process_Locators.Reject_after_fail).click({ force: true }).then(() => cy.wait(5000));
+  cy.contains(Candidate_Process_Locators.Reject_Int).click({ force: true }).then(() => cy.wait(5000));
   return;
 }
 
-Reject_Pass():void{
-  cy.get(Candidate_Process_Locators.Reject_after_pass_Button).click({ force: true }).then(() => cy.wait(5000));
-  return;
-}
 Another_Int():void{
-  cy.get(Candidate_Process_Locators.Second_Iv_Button).click({ force: true }).then(() => cy.wait(5000));
+  cy.contains(Candidate_Process_Locators.Second_Iv_Button).click({ force: true }).then(() => cy.wait(5000));
   return;
 }
 
 Offer_jop():void{
-  cy.get(Candidate_Process_Locators.Offer_job_Button).click({ force: true }).then(() => cy.wait(5000));
+  cy.contains(Candidate_Process_Locators.Offer_job_Button).click({ force: true }).then(() => cy.wait(5000));
   return;
 }
 Reject_Offer():void{
-  cy.get(Candidate_Process_Locators.Reject_Offer_But).click({ force: true }).then(() => cy.wait(5000));
+  cy.get(Candidate_Process_Locators.Reject_Button).first().click({ force: true }).then(() => cy.wait(5000));
   return;
 }
 
 Offer_Declined():void{
-  cy.get(Candidate_Process_Locators.Offer_Declined_Button).click({ force: true }).then(() => cy.wait(5000));
+  cy.contains(Candidate_Process_Locators.Offer_Declined_Button).click({ force: true }).then(() => cy.wait(5000));
   return;
 }
 Hire():void{
-  cy.get(Candidate_Process_Locators.Hire_Button).click({ force: true }).then(() => cy.wait(5000));
+  cy.contains(Candidate_Process_Locators.Hire_Button).click({ force: true }).then(() => cy.wait(5000));
   return;
 }
 
-Reject_OFDes():void{
-  cy.get(Candidate_Process_Locators.Reject_after_ofde).click({ force: true }).then(() => cy.wait(5000));
-  return;
-}
+
 }
 
 
