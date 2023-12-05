@@ -44,6 +44,8 @@ import { createEsbuildPlugin } from '@badeball/cypress-cucumber-preprocessor/esb
 
 
 export default defineConfig({
+  numTestsKeptInMemory: 3,  // <-- Add this line
+  experimentalMemoryManagement: true,
   e2e: {
     baseUrl: 'https://opensource-demo.orangehrmlive.com/web/index.php',
     specPattern: "**/*.feature",

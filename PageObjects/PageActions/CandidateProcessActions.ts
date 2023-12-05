@@ -42,7 +42,7 @@ export class Candidate_Process_Actions {
     cy.get(Candidate_Process_Locators.L_Name).type(lastName);
     cy.get(Candidate_Process_Locators.Email_txt).type(email);
     cy.get(Candidate_Process_Locators.Select_Vacancy).click({ force: true });// Open the dropdown
-    cy.get('span[data-v-13cf171c=""]').contains('Senior QA Lead').click({ force: true });
+    cy.get('span[data-v-13cf171c=""]').contains('Associate IT Manager').click({ force: true });
     cy.get(Candidate_Process_Locators.Save_Candidate).click();
   
 
@@ -60,7 +60,7 @@ export class Candidate_Process_Actions {
   Add_interv(Interview_Title : string,Int_Name ,date :string ):void{
     cy.get(Candidate_Process_Locators.Interview_title).type(Interview_Title);
      cy.get(Candidate_Process_Locators.Interviewer_Name).type('Odis');
-    // Using class selector
+   
     cy.get('span[data-v-1ccb3a64=""]').click({ force: true });
 cy.get('.oxd-button.oxd-button--medium.oxd-button--text.orangehrm-input-field-bottom-space').click({ force: true });
 
