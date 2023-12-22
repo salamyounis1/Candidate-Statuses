@@ -1,41 +1,26 @@
 /// <reference types="cypress" />
-// import { LoginPageElement } from "C:/Users/twitter/Desktop/cypress_course/PageObjects/PageActions/LoginPageActions";
 
-// const Login_Elements = new LoginPageElement();
-
-// describe('Orange HRM Login Feature', () => {
-//   it('Visits the Cypress website and performs actions', () => {
-//     // Use Cypress commands
-//     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php');
-//     Login_Elements.username('Admin');
-//     Login_Elements.password('admin123');
-//     Login_Elements.LoginButton();
-//   });
-// });
-
-
-
-
-/// <reference types="cypress" />
 import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
 import { LoginPageElement } from "C:/Users/twitter/Desktop/cypress_course/PageObjects/PageActions/LoginPageActions";
-// Your test file
+
 
 
 const Login_Elements = new LoginPageElement();
 
-Given('visit Orange HRM website', () => {
-  cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php');
+Given('the user is on the login page', () => {
+
+  cy.visit('/');
 });
 
-When('User provide username', () => {
-  Login_Elements.username('Admin');
-});
-
-When('User provide password', () => {
-  Login_Elements.password('admin123');
-});
-
-Then('Click on login button to log in', () => {
+When('the user enters valid username and password and clicks the login button', () => {
+  cy.fixture('MyData.json').then((MyUser) => {
+  Login_Elements.username(MyUser.UserName);
+  Login_Elements.password(MyUser.Password);
   Login_Elements.LoginButton();
+});
+});
+
+
+Then('the user should be redirected to the dashboard', () => {
+  cy.url().should('include', '/dashboard');
 });

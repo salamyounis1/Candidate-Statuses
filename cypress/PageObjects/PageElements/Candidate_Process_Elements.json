@@ -1,0 +1,39 @@
+
+{
+
+    "Candidate_Process_Locators":{
+       "RecruitmentButton":"a.oxd-main-menu-item[data-v-6475d26d][href='/web/index.php/recruitment/viewRecruitmentModule']",
+       "ViewCandidatesButton":"Candidates",
+       "ViewMyCandidatesButton":"[class='oxd-icon bi-eye-fill']", 
+       "Status":"[class='oxd-text oxd-text--p oxd-text--subtitle-2']",
+       "RejectButton":"[class='oxd-button oxd-button--medium oxd-button--danger']" ,
+       "GreenButton":"[class='oxd-button oxd-button--medium oxd-button--success']",
+       "AddCaButton":"button[class='oxd-button oxd-button--medium oxd-button--secondary']",
+       "FName":"input[placeholder='First Name']",
+       "MName":"input[placeholder='Middle Name']",
+       "LName":"input[placeholder='Last Name']",
+       "SelectVacancy":"[class='oxd-icon bi-caret-down-fill oxd-select-text--arrow']", 
+       "Emailtxt":"input[placeholder='Type here']",
+       "SaveCandidate":"button[type='submit']",
+       "SaveStatus":"button[type='submit']",
+       "SelectVacancyList":"span[data-v-13cf171c='']",
+       "SelectVacancyListForSecondIt":"span[data-v-1ccb3a64='']",
+       "Interviewtitle":"[class='oxd-input oxd-input--active']",
+       "InterviewerName":"input[placeholder='Type for hints...']",
+       "DateOfIn":"[class='oxd-icon bi-calendar oxd-date-input-icon']",
+       "DeleteCan":"[class='oxd-icon bi-trash']",
+       "YESDelete":"[class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin']",
+       "RejectInt":"Reject",
+       "InterviewFailedButton":"Mark Interview Failed",
+       "SecondIvButton":"Schedule Interview",
+       "OfferjobButton":"Offer Job",
+       "OfferDeclinedButton":"Offer Declined",
+       "HireButton":"Hire",
+       "RespectivePage":"[class='oxd-text oxd-text--h6 orangehrm-main-title']"
+       
+
+
+       
+
+    }
+}

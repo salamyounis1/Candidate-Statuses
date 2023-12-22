@@ -1,5 +1,5 @@
 
-import { LoginPageLocators } from 'C:/Users/twitter/Desktop/tscycu/PageObjects/PageElements/LoginPageElements.json';
+import { LoginPageLocators } from 'C:/Users/twitter/Desktop/tscycu/cypress/PageObjects/PageElements/LoginPageElements.json';
 export class LoginPageElement {
   username(uname: string): void {
     cy.get(LoginPageLocators.username_text).type(uname);
